@@ -1,9 +1,12 @@
 {
-  "name": "daoanhdoan/workerman",
-  "description": "Wokerman - Workerman is an asynchronous event-driven PHP framework with high performance to build fast and scalable network applications.",
- "type": "drupal-custom-module",
-  "license":"GPL-2.0",
-  "extra": {
-    "installer-name": "workerman"
-  }
+    "name": "daoanhdoan/workerman",
+    "description": "Wokerman - Workerman is an asynchronous event-driven PHP framework with high performance to build fast and scalable network applications.",
+    "type": "drupal-custom-module",
+    "license": "GPL-2.0",
+    "extra": {
+        "installer-name": "workerman"
+    },
+    "require": {
+        "workerman/workerman": "*"
+    }
 }
