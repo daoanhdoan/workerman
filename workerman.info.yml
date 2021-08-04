@@ -1,0 +1,5 @@
+name: 'Wokerman'
+type: module
+package: "DNC - Server"
+description: "Workerman is an asynchronous event-driven PHP framework with high performance to build fast and scalable network applications."
+core_version_requirement: ^9

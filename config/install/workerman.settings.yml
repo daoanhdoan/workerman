@@ -1,0 +1,15 @@
+scheme: 'websocket'
+host: 'localhost'
+port: 9086
+process: 1
+service_key: ''
+enable_ssl: false
+ssl_cert: ''
+ssl_cert_path: ''
+ssl_key: ''
+ssl_key_path: ''
+backend:
+  scheme: 'http'
+  host: 'localhost'
+  port: 80
+  message_path: '/workerman/message'

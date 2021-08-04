@@ -1,0 +1,12 @@
+workerman.config:
+  title: 'Workerman'
+  route_name: workerman.config
+  parent: system.admin_config_system
+  description: 'Workerman server.'
+  weight: -20
+workerman.status:
+  title: 'Status'
+  route_name: workerman.status
+  parent: system.admin_config_system
+  description: 'Workerman server status.'
+  weight: -19

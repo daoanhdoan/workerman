@@ -1,0 +1,6 @@
+services:
+  workerman.config:
+    class: Drupal\Core\Config\Config
+    factory: config.factory:getEditable
+    arguments: ['workerman.settings']
+

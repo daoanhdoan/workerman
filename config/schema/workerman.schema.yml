@@ -1,0 +1,49 @@
+workerman.settings:
+  type: config_object
+  label: 'WOrkerman config.'
+  mapping:
+    scheme:
+      type: string
+      label: 'Protocol used by Workerman server'
+    host:
+      type: string
+      label: 'Workerman server host'
+    port:
+      type: integer
+      label: 'Wokerman server port'
+    process:
+      type: integer
+      label: 'The number of Workerman server process'
+    service_key:
+      type: string
+      label: 'Service key'
+    enable_ssl:
+      type: boolean
+      label: 'Workerman server ssl'
+    ssl_cert:
+      type: string
+      label: 'Path to ssl certificate'
+    ssl_cert_path:
+      type: string
+      label: 'Path to ssl certificate path'
+    ssl_key:
+      type: string
+      label: 'Path to ssl key'
+    ssl_key_path:
+      type: string
+      label: 'Path to ssl certificate key path'
+    backend:
+      type: mapping
+      mapping:
+        scheme:
+          type: string
+          label: 'Protocol used by Workerman server'
+        host:
+          type: string
+          label: 'Host'
+        port:
+          type: integer
+          label: 'Port'
+        message_path:
+          type: string
+          label: 'Message path'

@@ -1,0 +1,22 @@
+workerman.config:
+  path: '/admin/config/system/workerman'
+  defaults:
+    _title: 'Workerman'
+    _form: 'Drupal\workerman\Form\WorkermanConfigForm'
+  requirements:
+    _permission: 'administer workerman module'
+workerman.status:
+  path: '/admin/config/system/workerman/status'
+  defaults:
+    _title: 'Workerman'
+    _form: 'Drupal\workerman\Form\WorkermanStatusForm'
+  requirements:
+    _permission: 'administer workerman module'
+workerman.message:
+  path: 'workerman/message'
+  defaults:
+    _title: 'Message'
+    _controller: 'Drupal\workerman\Controller\WorkermanController::message'
+  requirements:
+    _access: 'TRUE'
+    _format: 'json'

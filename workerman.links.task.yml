@@ -1,0 +1,8 @@
+workerman.config:
+  route_name: workerman.config
+  title: 'Settings'
+  base_route: workerman.config
+workerman.status:
+  route_name: workerman.status
+  title: 'Status'
+  base_route: workerman.config

@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * The installation instructions for the SMTP Authentication Support.
+ */
+
+use Drupal\Core\Url;
+use Workerman\Worker;
+
+/**
+ * Implements hook_uninstall().
+ */
+function workerman_uninstall() {
+//Todo: Stop wokerman
+  // Cleaning garbage.
+  $config = \Drupal::service('config.factory');
+  $workerman_config = $config->getEditable('workerman.settings');
+  $workerman_config->delete();
+}
+
+/**
+ * Implements hook_install().
+ */
+function workerman_install() {
+  $messenger = \Drupal::messenger();
+  // @var \Drupal\Core\Routing\RouteBuilderInterface $routeBuilder $route_builder.
+  $route_builder = \Drupal::service('router.builder');
+
+  // Makes the 'workerman.config' route available here, see hook_install doc.
+  $route_builder->rebuild();
+
+  $messenger->addMessage(t('Thanks for installing Workerman'));
+  $messenger->addMessage(t('Server settings on <a href="@url_settings">Workerman</a>', [
+    '@url_settings' => Url::fromRoute('workerman.config')->toString(),
+  ]));
+}
+
+/**
+ * Implements @see hook_requirements().
+ */
+function workerman_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'runtime') {
+    // Ensure Worker exists.
+    if (class_exists(Worker::class)) {
+      $worker = new Worker();
+    }
+    if (empty($worker)) {
+      $requirements['wokerman'] = [
+        'title' => (string) t('Workerman'),
+        'value' => (string) t('Missing'),
+        'severity' => REQUIREMENT_ERROR,
+        'description' => t('Workerman is Required for server to function.'),
+      ];
+
+      return $requirements;
+    }
+  }
+  return $requirements;
+}

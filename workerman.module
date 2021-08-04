@@ -1,0 +1,22 @@
+<?php
+/**
+ * Implement @see hook_hook_info()
+ */
+function workerman_hook_info() {
+  $hooks['worker_start'] = [
+    'group' => 'workerman',
+  ];
+  $hooks['worker_connection_open'] = [
+    'group' => 'workerman',
+  ];
+  $hooks['worker_message'] = [
+    'group' => 'workerman',
+  ];
+  $hooks['worker_error'] = [
+    'group' => 'workerman',
+  ];
+  $hooks['worker_connection_close'] = [
+    'group' => 'workerman',
+  ];
+  return $hooks;
+}
